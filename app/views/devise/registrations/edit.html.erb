@@ -12,10 +12,20 @@
     <% else %>
       <%= image_tag @user.profile_image.url, class: "profile-img", id: "profile-img" %>
     <% end %>
+
     <label class="profile-img-upload">
       <%= f.file_field :profile_image, id: "profile_image_upload" %>ファイルを選択
     </label>
   </div>
+
+    <div class="form-group">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレス" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.text_field :name, class: "form-control", placeholder: "名前" %>
+    </div>
+
   
     <div class="form-group">
       <%= f.text_area :self_introduction, class: "form-control", placeholder: "紹介", rows: "4" %>
