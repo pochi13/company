@@ -61,6 +61,7 @@ if(location.pathname == "/users") {
           let xMulti = event.deltaX * 0.03;
           let yMulti = event.deltaY / 80;
           let rotate = xMulti * yMulti;
+          postReaction(el.id, reaction);
 
           event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
 
