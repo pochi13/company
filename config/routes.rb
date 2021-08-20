@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   root to: 'tweets#index'
   resources :users, only: [:show, :index]
   resources :reactions, only: [:create]
+  resources :matching, only: [:index]
 end
