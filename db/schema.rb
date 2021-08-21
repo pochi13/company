@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_21_074423) do
+ActiveRecord::Schema.define(version: 2021_08_20_131304) do
 
   create_table "chat_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "chat_room_id", null: false
@@ -44,11 +44,6 @@ ActiveRecord::Schema.define(version: 2021_08_21_074423) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["from_user_id"], name: "index_reactions_on_from_user_id"
     t.index ["to_user_id"], name: "index_reactions_on_to_user_id"
-  end
-
-  create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
