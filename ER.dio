@@ -1,0 +1,25 @@
+<mxfile host="65bd71144e">
+    <diagram id="nMCjBTkqw9BxSlk1_QRo" name="ページ1">
+        <mxGraphModel dx="312" dy="520" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="reactions&lt;br&gt;&lt;br&gt;status&lt;br&gt;to_user_id&lt;br&gt;from_user_id" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry y="110" width="110" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="users&lt;br&gt;&lt;br&gt;name&lt;br&gt;email&lt;br&gt;password&lt;br&gt;gender&lt;br&gt;profile_image&lt;br&gt;self_introduction" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="110" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="chat_room_users&lt;br&gt;&lt;br&gt;chat_room_id&lt;br&gt;user_id&lt;br&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="110" width="130" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="chat_rooms" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="380" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="chat_messages&lt;br&gt;&lt;br&gt;content&lt;br&gt;user_id&lt;br&gt;chat_room_id" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="205" y="380" width="115" height="115" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
