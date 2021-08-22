@@ -1,38 +1,40 @@
+<%= render "devise/shared/header" %>
+
 <div class="jumbotron">
   <div class="container">
-    <nav class="navbar navbar-light">
-      <a class="navbar-brand text-white">COMPANY</a>
-      <div class="navbar__sign-in-btn">
-    <%= link_to "ログイン", new_user_session_path, class: "btn my-2 my-sm-0 bg-light text-top-color" %>
-      </div>
+    <nav class="navbar navbar-light ">
+     <div class = "home text-left">
+<%= link_to "COMPANY",root_path ,class: "navbar-brand text-white" %>
+</div>
+   
+
+ 
     </nav>
   </div>
 
-  <div class="top-title">
+
+<body>
+  <div class="top-title ">
+  <h1 class="text-white d-flex ">
+     人と企業をマッチングするアプリ
+    </h1>
     <h1 class="text-white text-center">
       Best Job
     </h1>
-  </div>
+  
+
+
 
   <div class="top-authentication text-center">
     <div class="top-authentication__sign-up-btn m-3">
-      <%= link_to "アカウントを作成する", "#", class: "btn text-white" %>
+      <%= link_to "はじめる",new_user_session_path , class: "btn text-white" %>
     </div>
-    <div class="top-authentication__sign-in-btn m-3">
-      <%= link_to "ログイン", "#", class: "btn text-white" %>
-    </div>
-    
-    <div class="input-group text-center">
-  <div class="form-outline">
-    <input type="search" id="form1" class="form-control" />
-    <label class="form-label" for="form1">Search</label>
-  </div>
-  <button type="button" class="btn btn-primary">
-    <i class="fas fa-search"></i>
-  </button>
-</div>
-  </div>
 </div>
 
+  </div>
+</div>
+</body>
 
 
+
+<%= render "devise/shared/footer" %>
