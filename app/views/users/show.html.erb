@@ -4,12 +4,20 @@
 
   <div class="profile mt-4">
 
+      <%= form_with model:@users,local: true do |f| %>
+    <%= f.text_area :name, placeholder:"名前", maxlength:"10" %>
+    <%= f.text_area :name,  placeholder:"自己紹介（必須 100文字まで)", maxlength:"100" %>
+<% end %>
+
   
     <% if @user.profile_image.url.nil? %>
       <div class="profile-default-img"></div>
     <% else %>
       <%= image_tag @user.profile_image.url, class: "profile-img" %>
     <% end %>
+
+
+
 
     <div class="profile-name mt-4">
       <%= @user.name %>
