@@ -1,0 +1,43 @@
+<div class="sign-up-page">
+  <div class="card">
+    <div class="card-header">
+      アカウントを作成する
+    </div>
+
+    <div class="card-body">
+      <%= form_with model: @company, url: companys_path, local: true do |f| %>
+       <div class="profile">
+    <img id="profile-img-prev" src="#" class='hidden' />
+    <% if @company.profile_image.url.nil? %>
+      <div class="profile-default-img"></div>
+    <% else %>
+      <%= image_tag @company.profile_image.url, class: "profile-img", id: "profile-img" %>
+    <% end %>
+    <label class="profile-img-upload">
+      <%= f.file_field :profile_image, id: "profile_image_upload" %>ファイルを選択
+    </label>
+  </div>
+        
+
+        <div class="form-group">
+          <%= f.text_field :name, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレス" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.text_area :introduce, class: "form-control", placeholder: "名前" %>
+        </div>
+
+       
+
+        <div class="sign-up__submit-btn">
+          <%= f.submit "はじめる", class: "btn btn-block text-white" %>
+        </div>
+      <% end %>
+
+    
+      </div>
+    </div>
+
+  </div>
+</div>
+
