@@ -10,6 +10,7 @@ class CompanysController < ApplicationController
   def show
     @company = Company.find(params[:id])
     @companys = Company.new
+    @messages = Message.all
   end
 
   def create

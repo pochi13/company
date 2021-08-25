@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'messages/new'
   devise_for :users,
   controllers: {
     registrations: 'registrations',
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   root to: 'tweets#index'
   resources :tweets,only: [:new,:show] 
   resources :companys,only: [:index,:new,:show,:create,:edit,:update,:destroy]
+  resources :messages, only: [:create]
   resources :users, only: [:show, :index]
   resources :reactions, only: [:create]
   resources :matching, only: [:index]
