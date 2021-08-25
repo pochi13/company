@@ -9,6 +9,7 @@ class CompanysController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
+    @companys = Company.new
   end
 
   def create
@@ -21,15 +22,26 @@ class CompanysController < ApplicationController
   end
 
   def edit
+    @company = Company.find(params[:id])
 
   end
 
   def update
-
+    @company = Company.find(params[:id])
+    if @company.update(company_params)
+      redirect_to companys_path(@company)
+    else
+      render :edit
+    end
   end
 
   def destroy
-  end
+    @company = Company.find(params[:id])
+    # if current_user.id == @company.id
+    @company.destroy
+    redirect_to companys_path
+    end
+  # end
 
   private
   def company_params

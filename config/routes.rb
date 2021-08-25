@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'tweets#index'
   resources :tweets,only: [:new,:show] 
-  resources :companys,only: [:index,:new,:show,:create,:edit,:update]
+  resources :companys,only: [:index,:new,:show,:create,:edit,:update,:destroy]
   resources :users, only: [:show, :index]
   resources :reactions, only: [:create]
   resources :matching, only: [:index]
