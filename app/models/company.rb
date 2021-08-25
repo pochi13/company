@@ -1,7 +1,8 @@
 class Company < ApplicationRecord
   mount_uploader :profile_image, CompanyProfileImageUploader
-  validates :name, presence: true
-  validates :introduce, presence: true
 
-
+  with_options presence: true do
+  validates :name
+  validates :introduce
+ end
 end

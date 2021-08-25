@@ -1,13 +1,13 @@
 <div class="user-show-page">
-<div class="container">
+  <div class="container">
     <nav class="navbar navbar-dark ">
      <div class = "home text-left">
       <%= link_to "COMPANY",root_path ,class: "navbar-brand text-dark" %>
      </div>
    </nav>
   </div>
-
-  <%# <%= render "partial/navbar" %> 
+  
+  <%= render "partial/navbar" %>
 
   <div class="profile mt-4">
     <% if @company.profile_image.url.nil? %>
@@ -16,46 +16,45 @@
       <%= image_tag @company.profile_image.url, class: "profile-img" %>
     <% end %>
   </div>
-  <%= form_with model:@companys, url: company_path,class: "px-3", local: true do |f| %>
+
+  <%= form_with model:@companys, url: companys_path,class: "px-3", local: true do |f| %>
     <div class="form-group">
       <%= f.text_field :name, class: "form-control", placeholder:@company.name  %>
     </div>
     <div class="form-group">
       <%= f.text_area :introduce, class: "form-control", placeholder: @company.introduce, rows: "4" %>
     </div>
-    <% if current_user.id != @company.id %>
+
+
+    <% if current_user.id == @company.id %>
+      <div class="user-action">
+        <div class="user-action-common">
+          <%= link_to company_path(@company), method: :delete do %>
+            <i class="fas fa-sign-out-alt fa-2x"></i>
+            <span>ログアウト</span>
+          <% end %>
+        </div>
+        <div class="user-action-common">
+          <%= link_to edit_company_path(@company) do %>
+            <i class="fas fa-pencil-alt fa-2x"></i>
+            <span>情報を編集<span>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+
+    <%# <% if current_user.id != @company.id %> 
     <%= f.button "コメントする",type:"submit" ,class:"comment-btn" do %>
-        <%= image_tag "comments.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span> 
+      <%= image_tag "comments.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+      <span>コメントする<span> 
     <% end %>
-    <% end %>
-    <%# <div id='messages'>
+  <% end %>
+
+
   <% @messages.reverse_each do |message| %>
-    <%# <p><%= message.text %></p>
-  <%# <% end %> 
-
-
+    <p><%= message.text %></p> 
   <% end %>
-
-
-
-  <% if current_user.id == @company.id %>
-    <div class="user-action">
-      <div class="user-action-common">
-       <%= link_to destroy_user_session_path, method: :delete do %>
-          <i class="fas fa-sign-out-alt fa-2x"></i>
-        <% end %>
-        <span>ログアウト</span>
-      </div>
-      <div class="user-action-common">
-        <%= link_to edit_user_registration_path do %>
-          <i class="fas fa-pencil-alt fa-2x"></i>
-        <% end %>
-        <span>情報を編集<span>
-      </div>
-    </div>
-   
-  <% end %>
-  
-
 </div>
+
+
