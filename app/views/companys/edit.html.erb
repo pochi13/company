@@ -2,8 +2,8 @@
 
   <%# <%= render "partial/navbar" %> 
 
-  <%= form_with model: @company, url: registration_path(companys_path), class: "px-3", local: true, method: :patch do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+  <%= form_with model: @company, url: company_path(@company), class: "px-3", local: true, method: :patch do |f| %>
+    <%# <%= render "devise/shared/error_messages", resource: resource %> 
 
     <div class="profile">
     <img id="profile-img-prev" src="#" class='hidden' />
