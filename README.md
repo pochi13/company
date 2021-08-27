@@ -46,70 +46,59 @@ https://git.heroku.com/company-36385.git
 
 ## users テーブル
 
-| Column             | Type   | Options 　                |
+| Column             | Type   | Options                   |
 | ------------------ | ------ | ------------------------- |
-| name               | string | null: false 　            |
+| name               | string | null: false               |
 | email              | string | null: false, unique: true |
-| encrypted_password | string | null: false 　            |
-| gender             | string | null: false 　            |
-| profile_image      |        | 　                        |
-| self_introduction  | text   | null: false 　            |
+| encrypted_password | string | null: false               |
+| gender             | string | null: false               |
+| profile_image      |        |                           |
+| self_introduction  | text   | null: false               |
 
 ### Association
 
-has_many :reactions
-has_many :chat_room_users
-has_many :chat_rooms, through: :chat_room_users
-has_many :chat_messages
+has_many :messages
+has_many :sonsulations
 
-## chat_messages テーブル
+## companys テーブル
+
+| Column        | Type   | Options     |
+| ------------- | ------ | ----------- |
+| name          | string | null: false |
+| introduction  | string | null: false |
+| profile_image |        |             |
+
+### Association
+
+has_many :messages
+has_many :consulations
+
+## messages テーブル
 
 | Column  | Type      | Options          |
 | ------- | --------- | ---------------- |
 | user    | reference | foreign_key:true |
-| item    | reference | foreign_key:true |
-| content | string    | null: false 　   |
+| company | reference | foreign_key:true |
+| text    | string    | null: false      |
 
 ### Association
 
 belongs_to :user
-belongs_to :chat_room
+belongs_to :company
 
-## reactions テーブル
+## consultations テーブル
 
-| Column | Type      | Options          |
-| ------ | --------- | ---------------- |
-| status | string    | null: false      |
-| user   | reference | foreign_key:true |
-| item   | reference | foreign_key:true |
-
-### Association
-
-belongs_to :to_user, class_name: "User"
-belongs_to :from_user, class_name: "User"
-
-## chat_room_users テーブル
-
-| Column       | Type      | Options          |
-| ------------ | --------- | ---------------- |
-| chat_room_id | reference | foreign_key:true |
-| user_id      | reference | foreign_key:true |
+| Column     | Type      | Options          |
+| ---------- | --------- | ---------------- |
+| title      | string    | null: false      |
+| reason     | string    | null: false      |
+| user_id    | reference | foreign_key:true |
+| company_id | reference | foreign_key:true |
 
 ### Association
 
-belongs_to :chat_room
 belongs_to :user
-
-## chat_rooms テーブル
-
-| Column | Type | Options |
-| ------ | ---- | ------- |
-
-### Association
-
-has_many :chat_room_users
-has_many :users, through: :chat_room_users
-has_many :chat_room_users
+belongs_to :company
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

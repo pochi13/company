@@ -7,18 +7,16 @@
     <div class="card-body">
       <%= form_with model: @company, url: companys_path, local: true do |f| %>
        <div class="profile">
-    <img id="profile-img-prev" src="#" class='hidden' />
-    <% if @company.profile_image.url.nil? %>
-      <div class="profile-default-img"></div>
-    <% else %>
-      <%= image_tag @company.profile_image.url, class: "profile-img", id: "profile-img" %>
-    <% end %>
-    <label class="profile-img-upload">
-      <%= f.file_field :profile_image, id: "profile_image_upload" %>ファイルを選択
-    </label>
-  </div>
-        
-
+       <img id="profile-img-prev" src="#" class='hidden' />
+         <% if @company.profile_image.url.nil? %>
+          <div class="profile-default-img"></div>
+          <% else %>
+          <%= image_tag @company.profile_image.url, class: "profile-img", id: "profile-img" %>
+          <% end %>
+          <label class="profile-img-upload">
+          <%= f.file_field :profile_image, id: "profile_image_upload" %>ファイルを選択
+          </label>
+        </div>
         <div class="form-group">
           <%= f.text_field :name, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレス" %>
         </div>
@@ -27,29 +25,24 @@
           <%= f.text_area :introduce, class: "form-control", placeholder: "名前" %>
         </div>
 
-       
-
         <div class="sign-up__submit-btn">
-          <%= f.submit "はじめる", class: "btn btn-block text-white" %>
+          <%= f.submit "参加する", class: "btn btn-block text-white" %>
         </div>
-      <% end %>
-
-    
+        <% end %>
       </div>
     </div>
 
-  </div>
-</div>
 
-  <%= link_to "#", class: "nav-item nav-link" do %>
-    <i class="fas fa-comments fa-lg inherit"></i>
-  <% end %>
-  <%= link_to user_path(@user), class: "nav-item nav-link" do %>
-    <span class="<%= 'active' if current_page?(user_path(@user)) || current_page?(edit_user_registration_path) %>">
-      <i class="fas fa-user fa-lg inherit"></i>
+
+  <%# <%= link_to "#", class: "nav-item nav-link" do %>
+    <%# <i class="fas fa-comments fa-lg inherit"></i>
+  <% end %> 
+  <%# <%= link_to user_path(@user), class: "nav-item nav-link" do %> 
+    <%# <span class="<%= 'active' if current_page?(user_path(@user)) || current_page?(edit_user_registration_path) %>
+      <%# <i class="fas fa-user fa-lg inherit"></i>
     </span>
-  <% end %>
-
+    <% end %> 
+ 
 
 
 
