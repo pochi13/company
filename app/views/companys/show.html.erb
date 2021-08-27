@@ -26,35 +26,20 @@
     </div>
 
 
-    <%# <% if current_user.id == @company.id %> 
+    <% if current_user.id == @company.id %>
       <div class="user-action">
         <div class="user-action-common">
-          <%= link_to company_path(@company), method: :delete do %>
+          <%= link_to "ログアウト",company_path(@company), method: :delete do %>
             <i class="fas fa-sign-out-alt fa-2x"></i>
-            <span>ログアウト</span>
           <% end %>
         </div>
         <div class="user-action-common">
-          <%= link_to edit_company_path(@company) do %>
+          <%= link_to "情報を編集",edit_company_path(@company) do %>
             <i class="fas fa-pencil-alt fa-2x"></i>
-            <span>情報を編集<span>
           <% end %>
         </div>
+        <% else %>
+        <%= "応募する",  %>
       </div>
-    <%# <% end %> 
-
-
-    <%# <% if current_user.id != @company.id %> 
-    <%= f.button "コメントする",type:"submit" ,class:"comment-btn" do %>
-      <%= image_tag "comments.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-      <span>コメントする<span> 
-    <% end %>
-  <% end %>
-
-
-  <% @messages.reverse_each do |message| %>
-    <p><%= message.text %></p> 
-  <% end %>
-</div>
-
+      <% end %>
 
