@@ -79,7 +79,7 @@
 
 <main>
 
-  <section class="py-5 text-center container">
+  <%# <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">アルバムページのサンプル</h1>
@@ -90,13 +90,13 @@
         </p>
       </div>
     </div>
-  </section>
+  </section> %>
 
   <div class="album py-5 bg-light">
     <div class="container">
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <% @companys.each do |company|%>
+      <% @companys.reverse_each do |company|%>
         <div class="col">
           <div class="card shadow-sm">
             <% if company.profile_image.url.nil? %>
@@ -112,10 +112,12 @@
               <p class="card-text"><%=  company.introduce  %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">見る</button>
-                  <%= link_to "見る",company_path(company.id) %>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">削除</button>
-                  <%= link_to "削除",company_path(company.id),method: :delete %>
+                   <ul>
+                  <%# <button type="button" class="btn btn-sm btn-outline-secondary">見る</button> %>
+                  <li><%= link_to "見る",company_path(company.id) %></li>
+                  <%# <button type="button" class="btn btn-sm btn-outline-secondary">削除</button> %>
+                  <li><%= link_to "削除",company_path(company.id),method: :delete %></li>
+                  </ul>
                 </div>
                 <small class="text-muted">9分</small>
               </div>

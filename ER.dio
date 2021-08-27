@@ -4,48 +4,42 @@
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="reactions&lt;br&gt;&lt;br&gt;status&lt;br&gt;to_user_id&lt;br&gt;from_user_id" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-                    <mxGeometry y="110" width="110" height="110" as="geometry"/>
+                <mxCell id="2" value="consultations&lt;br&gt;&lt;br&gt;title&lt;br&gt;reason&lt;br&gt;user_id&lt;br&gt;conpany_id" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry y="120" width="110" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="3" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="120" y="190" as="targetPoint"/>
+                        <mxPoint x="120" y="180" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="120" y="180"/>
+                        </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="3" value="users&lt;br&gt;&lt;br&gt;name&lt;br&gt;email&lt;br&gt;password&lt;br&gt;gender&lt;br&gt;profile_image&lt;br&gt;self_introduction" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-                    <mxGeometry x="190" y="110" width="160" height="160" as="geometry"/>
+                    <mxGeometry x="370" y="100" width="160" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="4" edge="1">
+                <mxCell id="12" value="companys&lt;br&gt;&lt;br&gt;name&lt;br&gt;introduce&lt;br&gt;profile_image" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="360" width="170" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="15">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="360" y="180" as="targetPoint"/>
+                        <mxPoint x="350" y="450" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="4" value="chat_room_users&lt;br&gt;&lt;br&gt;chat_room_id&lt;br&gt;user_id&lt;br&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-                    <mxGeometry x="430" y="110" width="140" height="140" as="geometry"/>
+                <mxCell id="15" value="messages&lt;br&gt;&lt;br&gt;text&lt;br&gt;user_id&lt;br&gt;conpany_id" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="380" width="140" height="140" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="5" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="330" y="440" as="targetPoint"/>
+                <mxCell id="26" value="" style="endArrow=classic;html=1;exitX=-0.012;exitY=0.124;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="12">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="230" y="320" as="sourcePoint"/>
+                        <mxPoint x="120" y="240" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="5" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="500" y="250" as="targetPoint"/>
+                <mxCell id="27" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.688;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="3" target="15">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="310" y="340" as="sourcePoint"/>
+                        <mxPoint x="360" y="290" as="targetPoint"/>
                     </mxGeometry>
-                </mxCell>
-                <mxCell id="5" value="chat_rooms" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-                    <mxGeometry x="440" y="380" width="120" height="120" as="geometry"/>
-                </mxCell>
-                <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="6" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="262.5" y="280" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="6" value="chat_messages&lt;br&gt;&lt;br&gt;content&lt;br&gt;user_id&lt;br&gt;chat_room_id" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-                    <mxGeometry x="205" y="380" width="115" height="115" as="geometry"/>
-                </mxCell>
-                <mxCell id="12" value="company&lt;br&gt;&lt;br&gt;name&lt;br&gt;introduce&lt;br&gt;profile_image" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-                    <mxGeometry y="380" width="120" height="120" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
