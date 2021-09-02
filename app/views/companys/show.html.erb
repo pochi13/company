@@ -1,0 +1,46 @@
+<div class="user-show-page">
+  <div class="container">
+    <nav class="navbar navbar-dark ">
+     <div class = "home text-left">
+      <%= link_to "COMPANY",root_path ,class: "navbar-brand text-dark" %>
+     </div>
+   </nav>
+  </div>
+  
+  <%= render "partial/navbar" %>
+
+  <div class="profile mt-4">
+    <% if @company.profile_image.url.nil? %>
+      <div class="profile-default-img"></div>
+    <% else %>
+      <%= image_tag @company.profile_image.url, class: "profile-img" %>
+    <% end %>
+  </div>
+
+  <%= form_with model:@companys, url: companys_path,class: "px-3", local: true do |f| %>
+    <div class="form-group">
+      <%= f.text_field :name, class: "form-control", placeholder:@company.name  %>
+    </div>
+    <div class="form-group">
+      <%= f.text_area :introduce, class: "form-control", placeholder: @company.introduce, rows: "4" %>
+    </div>
+
+
+    <% if current_user.id == @company.id %>
+      <div class="user-action">
+        <div class="user-action-common">
+          <%= link_to "ログアウト",company_path(@company), method: :delete do %>
+            <i class="fas fa-sign-out-alt fa-2x"></i>
+          <% end %>
+        </div>
+        <div class="user-action-common">
+          <%= link_to "情報を編集",edit_company_path(@company) do %>
+            <i class="fas fa-pencil-alt fa-2x"></i>
+          <% end %>
+        </div>
+        <% else %>
+        <%= link_to "相談する",new_company_consultation_path(@company)  %>
+      </div>
+    <% end %>
+    <% end %>
+

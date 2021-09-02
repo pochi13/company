@@ -1,24 +1,23 @@
 <div class="user-show-page">
 
   <%= render "partial/navbar" %>
-
   <div class="profile mt-4">
-
-  
     <% if @user.profile_image.url.nil? %>
       <div class="profile-default-img"></div>
     <% else %>
       <%= image_tag @user.profile_image.url, class: "profile-img" %>
     <% end %>
-
-    <div class="profile-name mt-4">
-      <%= @user.name %>
-       <div class="profile-text">
-    <%= @user.self_introduction %>
   </div>
+  <%= form_with model:@users, class: "px-3", local: true do |f| %>
+    <div class="form-group">
+      <%= f.text_field :name, class: "form-control", placeholder:@user.name  %>
     </div>
+    <div class="form-group">
+      <%= f.text_area :self_introduction, class: "form-control", placeholder: @user.self_introduction, rows: "4" %>
+    </div>
+  <% end %>
 
-  </div>
+
 
   <% if current_user.id == @user.id %>
     <div class="user-action">
@@ -35,6 +34,8 @@
         <span>情報を編集<span>
       </div>
     </div>
+   
   <% end %>
+  
 
 </div>
